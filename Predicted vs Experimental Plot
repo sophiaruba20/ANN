@@ -1,0 +1,16 @@
+# predicted_vs_actual_plot.py
+
+import matplotlib.pyplot as plt
+
+def plot_results(y_test, y_pred):
+
+    plt.scatter(y_test, y_pred)
+
+    plt.xlabel("Experimental Strength")
+    plt.ylabel("Predicted Strength")
+    plt.title("Predicted vs Experimental Results")
+
+    plt.plot([min(y_test), max(y_test)],
+             [min(y_test), max(y_test)])
+
+    plt.show()
