@@ -1,0 +1,20 @@
+# data_preprocessing.py
+
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+
+# Load dataset
+data = pd.read_csv("dataset.csv")
+
+# Check missing values
+print(data.isnull().sum())
+
+# Separate input and output
+X = data[['Cement','FA','CA','Water','GP','GF']]
+y = data[['Compressive_Strength','Split_Tensile_Strength','Flexural_Strength']]
+
+# Normalize features
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+print("Data preprocessing completed")
